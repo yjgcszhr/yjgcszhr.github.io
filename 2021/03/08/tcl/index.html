@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, hongruizhu">
+    <meta name="keywords" content="tcl快速入门, hongruizhu">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | hongruizhu</title>
+    <title>tcl快速入门 | hongruizhu</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -289,12 +289,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">contact</h1>
+                    <h1 class="description center-align post-title">tcl快速入门</h1>
                 </div>
             </div>
         </div>
@@ -408,12 +408,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/tcl/">
+                                <span class="chip bg-color">tcl</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
+                                编程语言
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -422,7 +435,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-07
+                    2021-03-08
                 </div>
                 
 
@@ -431,14 +444,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    897
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -458,7 +471,132 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>TCL是一种很通用的脚本语言，功能强大。最早称为“工具命令语言””Tool Command Language”，但是目前已经不是这个含义，不过我们仍然称呼它TCL，发音为”tickle”。TCL经常被用于快速原型开发，脚本编程，GUI和测试等方面。</p>
+<h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><blockquote>
+<p>TCL语言使用<code>$ [] \</code>来实现置换功能<br>$: 解释器会把$后面的认为是变量名，将变量置换成他的值，例：</p>
+</blockquote>
+<pre><code>set a &quot;zhr&quot;; 
+#赋值给a
+puts $a;
+#打印结果为zhr
+puts a;
+#打印结果为a
+</code></pre>
+<p><code>[ ]</code>:[ ]内是一个独立的TCL语句，例：</p>
+<pre><code>set a [expr 3 + 4];
+puts $a;
+#打印结果是7
+</code></pre>
+<p><code>\</code>: 加上\会变成普通字符,例：</p>
+<pre><code>puts &quot;[expr 3 + 4]&quot;;
+#结果是7，expr是将运算表达式求值
+puts &quot;\[[expr 3 + 4]]&quot;;
+#输出结果是[expr 3 + 4]
+</code></pre>
+<blockquote>
+<p>其他字符： { }相当于\ 的功能     #起到注释的作用,此处就不举例说明了</p>
+</blockquote>
+<h2 id="变量数组列表"><a href="#变量数组列表" class="headerlink" title="变量数组列表"></a>变量数组列表</h2><blockquote>
+<p>变量定义 set 变量名 变量值，取值 puts $变量名，例：<br><code>set a &quot;i love you&quot;</code><br><code>puts $a</code></p>
+</blockquote>
+<blockquote>
+<p>数组定义 set 数组名（元素名）值，取值 puts $数组名（元素名），例：</p>
+</blockquote>
+<pre><code>set cell(name) &quot;zhr&quot;;
+puts $cell(name)；
+</code></pre>
+<p>可以使用array获取数组信息，例：<br><code>array size cell</code>或者<code>array name cell</code></p>
+<blockquote>
+<p>列表定义 set 列表名 {元素1 元素2}，取值 puts $列表名，例：</p>
+</blockquote>
+<pre><code>set list &#123;list1 list2 list3&#125;;
+puts $list;
+</code></pre>
+<p>本人觉得列表和变量的使用方法相同</p>
+<h2 id="列表指令"><a href="#列表指令" class="headerlink" title="列表指令"></a>列表指令</h2><blockquote>
+<p>contact: 合并两列表，例： </p>
+</blockquote>
+<pre><code>contact $list1 $list2
+</code></pre>
+<blockquote>
+<p>llength: 返回元素个数，例：</p>
+</blockquote>
+<pre><code>llength $list1
+</code></pre>
+<blockquote>
+<p>lindex: 返回列表第n个元素，例：</p>
+</blockquote>
+<pre><code>lindex $list1 1
+</code></pre>
+<blockquote>
+<p>lappend: 末尾加入新元素，例：</p>
+</blockquote>
+<pre><code>lappend list1 1
+</code></pre>
+<blockquote>
+<p>lsort: 排序，后面可加参数 -real 按浮点数大小排  -unique 删除重复，例：</p>
+</blockquote>
+<pre><code>lsort (real) $list1
+</code></pre>
+<h2 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h2><blockquote>
+<p>if语句：和c语言中的if语句功能十分相似，例</p>
+</blockquote>
+<pre><code>if &#123; 表达式 &#125; &#123;
+
+            #运算;
+
+        &#125; else &#123;
+
+             #其他运算;
+
+        &#125;
+</code></pre>
+<blockquote>
+<p>foreach语句：把列表里第0个元素开始，依次把值赋给变量，例：</p>
+</blockquote>
+<pre><code>foreach i $list&#123;  # 把list里的元素依次给i
+puts $i
+&#125;
+</code></pre>
+<blockquote>
+<p>break语句</p>
+</blockquote>
+<img src="/img/tcl/break.jpg" width = "100%">
+
+<blockquote>
+<p>continue语句<br><img src="/img/tcl/continue.png" width = "100%"></p>
+</blockquote>
+<blockquote>
+<p>while语句<br><img src="/img/tcl/while.png" width = "100%"></p>
+</blockquote>
+<blockquote>
+<p>for语句结构：for{initialization} {condition} {increment} {body}，例：</p>
+</blockquote>
+<pre><code>for &#123;set i 0&#125; &#123;$i&lt; 10&#125; &#123;incr i&#125; &#123;puts $i;&#125;  
+#将打印出0到9`
+</code></pre>
+<h2 id="过程函数"><a href="#过程函数" class="headerlink" title="过程函数"></a>过程函数</h2><img src="/img/tcl/proc.png" width = "100%">
+
+<h2 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h2><blockquote>
+<p>正则表达式是按照字符匹配规则提取出自己需要的字符内容，字符匹配规则如下：<br>正则表达式的\w，是匹配一个字母、数字或下划线，<br>正则表达式的\d,是匹配数字，<br>正则表达式的\s，用来匹配空格，<br>正则表达式的<code>.</code>,用来匹配任一字符，<br>正则表达式的<code>*</code>用来进行零次或多次匹配，<code>+</code>用来一次或多次匹配，<code>?</code>用来零次或一次匹配，<br>正则表达式的<code>^</code>用来表示字符串开头，<code>$</code>表示字符串结尾。</p>
+</blockquote>
+<p>我们使用正则匹配指令regexp来进行正则匹配。例：</p>
+<pre><code>regexp &#123;\s(\d+).*&#125; &quot;snow is 30 years old&quot; total age 
+puts $total
+#输出30 years old
+puts $age
+#输出30
+</code></pre>
+<h2 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h2><blockquote>
+<p>文本处理在日常生活中十分常用，tcl脚本中用于文本处理的一般是open,gets,close;例：</p>
+</blockquote>
+<pre><code>set f01 [open &quot;fix.tcl&quot; w];# 命令表示 打开或者新建一个文件“fix.tcl”，并将其 file ID 设置为 f01，后续就以这个 file ID 来操作这个文件；
+
+puts  $f01 &quot;size_cell $cel_name $ref_name&quot; ;#这条命令表示将这个字符串写入文件 fix.tcl，并自动追加换行符；
+
+close $f01 ;#对文件操作完成后，需要将其关闭
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -474,7 +612,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">hongrui zhu</a>
+                    <a href="/about" rel="external nofollow noreferrer">zhr</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -484,7 +622,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yjgcszhr.github.io/contact/index.html">http://yjgcszhr.github.io/contact/index.html</a>
+                    <a href="http://yjgcszhr.github.io/2021/03/08/tcl/">http://yjgcszhr.github.io/2021/03/08/tcl/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -497,7 +635,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">hongrui zhu</a>
+                    <a href="/about" target="_blank">zhr</a>
                     !
                 </span>
             </div>
@@ -521,7 +659,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/tcl/">
+                                    <span class="chip bg-color">tcl</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -694,13 +836,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2021/03/08/tcl/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="tcl快速入门">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">tcl快速入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -711,17 +853,29 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            hongrui zhu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    编程语言
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/tcl/">
+                        <span class="chip bg-color">tcl</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -729,37 +883,48 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2021/03/06/markdown-yu-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="markdown语法">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">markdown语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。笔者写这篇文章主要是写给自己看，熟能生巧，也顺便推广一波markdown。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-06
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            hongrui zhu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    编程语言
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/markdown/">
+                        <span class="chip bg-color">markdown</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

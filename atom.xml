@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>hongruizhu</title>
+  
+  <subtitle>夏若浅沫的博客</subtitle>
+  <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://yjgcszhr.github.io/"/>
+  <updated>2021-03-09T05:57:30.324Z</updated>
+  <id>http://yjgcszhr.github.io/</id>
+  
+  <author>
+    <name>hongrui zhu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tcl快速入门</title>
+    <link href="http://yjgcszhr.github.io/2021/03/08/tcl/"/>
+    <id>http://yjgcszhr.github.io/2021/03/08/tcl/</id>
+    <published>2021-03-08T12:11:51.000Z</published>
+    <updated>2021-03-09T05:57:30.324Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;TCL是一种很通用的脚本语言，功能强大。最早称为“工具命令语言””Tool Command Language”，但是目前已经不是这个含义，不过我们仍然称呼它TCL，发音为”tickle”。TCL经常被用于快速原型开发，脚本编程，GUI和测试等方面。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="编程语言" scheme="http://yjgcszhr.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="tcl" scheme="http://yjgcszhr.github.io/tags/tcl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown语法</title>
+    <link href="http://yjgcszhr.github.io/2021/03/06/markdown-yu-fa/"/>
+    <id>http://yjgcszhr.github.io/2021/03/06/markdown-yu-fa/</id>
+    <published>2021-03-06T13:27:04.000Z</published>
+    <updated>2021-03-07T11:05:27.678Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。笔者写这篇文章主要是写给自己看，熟能生巧，也顺便推广一波markdown。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程语言" scheme="http://yjgcszhr.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="markdown" scheme="http://yjgcszhr.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yjgcszhr.github.io/2021/03/05/hello-world/"/>
+    <id>http://yjgcszhr.github.io/2021/03/05/hello-world/</id>
+    <published>2021-03-05T07:14:20.995Z</published>
+    <updated>2021-03-05T07:14:20.996Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
