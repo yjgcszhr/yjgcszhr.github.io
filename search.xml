@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>modelsim使用到的一些tcl脚本</title>
+      <link href="2021/03/11/modelsim-shi-yong-dao-de-yi-xie-tcl-jiao-ben/"/>
+      <url>2021/03/11/modelsim-shi-yong-dao-de-yi-xie-tcl-jiao-ben/</url>
+      
+        <content type="html"><![CDATA[<h2 id="常用指令简介"><a href="#常用指令简介" class="headerlink" title="常用指令简介"></a>常用指令简介</h2><blockquote><p>vlib work :创建名叫work的工作库<br>vmap work work : 映射逻辑库名work到指定的目录<br>vlog test.v :编译名叫test的verilog文件<br>vcom test.vhd :编译名叫test的vhdl文件<br>vsim -voptargs=+acc -L altera_mf test: 仿真test文件，-L表示使用altera库<br><code>add wave /*</code> : 将所有信号waveform dump出来</p></blockquote><h2 id="实际操作"><a href="#实际操作" class="headerlink" title="实际操作"></a>实际操作</h2><blockquote><p>创建一个名叫run的文本文档，将后缀名改为.bat<br>填写内容： </p></blockquote><pre><code>#C:\modeltech64_10.5\win64\modelsim -do mrun.do#用modelsim仿真则注释下面,根据modelsim安装路径填写上面路径C:\questasim64_10.6c\win64\questasim -do mrun.do#用questasim仿真则注释上面</code></pre><p>然后关闭</p><blockquote><p>创建一个名叫mrun的文本文档，将后缀名改为.do<br>填写内容;</p></blockquote><pre><code>.main clear#清空命令行vlib workvmap work workvlog altera_mf.vvlog filelist.sv#大型工程中，文件众多，可以在filelist中include所有文件vsim -novopt -voptargs=+acc work.dma_test_top#使用vopt进行设计优化，常与+acc配合使用add log -r /*#添加日志，方便仿真中每次添加信号后能自动显示其值，不用重新rundo wave.dorun 10ms</code></pre><p>然后关闭</p><blockquote><p>创建一个名叫wave的文本文档，将后缀名改为.do<br>填写内容：</p></blockquote><pre><code>add wave –hex /top/clk#根据信号引脚填写</code></pre><p>为什么要另创建一个wave文件，而不是直接写在mrun.do里，是方便在波形展示界面添加需要查看的信号后可以点击保存信号列表文件，然后覆盖wave文件</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> tcl </tag>
+            
+            <tag> modelsim </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>tcl快速入门</title>
       <link href="2021/03/08/tcl/"/>
       <url>2021/03/08/tcl/</url>

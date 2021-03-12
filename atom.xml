@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-03-09T05:57:30.324Z</updated>
+  <updated>2021-03-12T13:53:47.255Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>modelsim使用到的一些tcl脚本</title>
+    <link href="http://yjgcszhr.github.io/2021/03/11/modelsim-shi-yong-dao-de-yi-xie-tcl-jiao-ben/"/>
+    <id>http://yjgcszhr.github.io/2021/03/11/modelsim-shi-yong-dao-de-yi-xie-tcl-jiao-ben/</id>
+    <published>2021-03-11T12:11:51.000Z</published>
+    <updated>2021-03-12T13:53:47.255Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;常用指令简介&quot;&gt;&lt;a href=&quot;#常用指令简介&quot; class=&quot;headerlink&quot; title=&quot;常用指令简介&quot;&gt;&lt;/a&gt;常用指令简介&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;vlib work :创建名叫work的工作库&lt;br&gt;vmap work</summary>
+        
+      
+    
+    
+    
+    <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="tcl" scheme="http://yjgcszhr.github.io/tags/tcl/"/>
+    
+    <category term="modelsim" scheme="http://yjgcszhr.github.io/tags/modelsim/"/>
+    
+  </entry>
   
   <entry>
     <title>tcl快速入门</title>
