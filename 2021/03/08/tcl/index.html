@@ -17,7 +17,7 @@
 
 
     <title>tcl快速入门 | hongruizhu</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/medias/top1.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -42,7 +42,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/comment_bg.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/zhr1.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">hongruizhu</span>
                 </a>
@@ -130,7 +130,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/comment_bg.png" class="logo-img circle responsive-img">
+        <img src="/medias/zhr1.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">hongruizhu</div>
         <div class="logo-desc">
@@ -444,7 +444,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    897
+                    898
                 </div>
                 
 
@@ -461,6 +461,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
         <!-- 代码块折行 -->
@@ -475,24 +478,23 @@
 <h2 id="置换"><a href="#置换" class="headerlink" title="置换"></a>置换</h2><blockquote>
 <p>TCL语言使用<code>$ [] \</code>来实现置换功能<br>$: 解释器会把$后面的认为是变量名，将变量置换成他的值，例：</p>
 </blockquote>
-<pre><code>set a &quot;zhr&quot;; 
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">set a &quot;zhr&quot;; 
 #赋值给a
 puts $a;
 #打印结果为zhr
 puts a;
-#打印结果为a
-</code></pre>
+#打印结果为a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>[ ]</code>:[ ]内是一个独立的TCL语句，例：</p>
-<pre><code>set a [expr 3 + 4];
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">set a [expr 3 + 4];
 puts $a;
-#打印结果是7
-</code></pre>
+#打印结果是7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p><code>\</code>: 加上\会变成普通字符,例：</p>
-<pre><code>puts &quot;[expr 3 + 4]&quot;;
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">puts &quot;[expr 3 + 4]&quot;;
 #结果是7，expr是将运算表达式求值
 puts &quot;\[[expr 3 + 4]]&quot;;
-#输出结果是[expr 3 + 4]
-</code></pre>
+#输出结果是[expr 3 + 4]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <blockquote>
 <p>其他字符： { }相当于\ 的功能     #起到注释的作用,此处就不举例说明了</p>
 </blockquote>
@@ -502,46 +504,40 @@ puts &quot;\[[expr 3 + 4]]&quot;;
 <blockquote>
 <p>数组定义 set 数组名（元素名）值，取值 puts $数组名（元素名），例：</p>
 </blockquote>
-<pre><code>set cell(name) &quot;zhr&quot;;
-puts $cell(name)；
-</code></pre>
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">set cell(name) &quot;zhr&quot;;
+puts $cell(name)；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>可以使用array获取数组信息，例：<br><code>array size cell</code>或者<code>array name cell</code></p>
 <blockquote>
 <p>列表定义 set 列表名 {元素1 元素2}，取值 puts $列表名，例：</p>
 </blockquote>
-<pre><code>set list &#123;list1 list2 list3&#125;;
-puts $list;
-</code></pre>
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">set list &#123;list1 list2 list3&#125;;
+puts $list;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>本人觉得列表和变量的使用方法相同</p>
 <h2 id="列表指令"><a href="#列表指令" class="headerlink" title="列表指令"></a>列表指令</h2><blockquote>
 <p>contact: 合并两列表，例： </p>
 </blockquote>
-<pre><code>contact $list1 $list2
-</code></pre>
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">contact $list1 $list2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p>llength: 返回元素个数，例：</p>
 </blockquote>
-<pre><code>llength $list1
-</code></pre>
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">llength $list1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p>lindex: 返回列表第n个元素，例：</p>
 </blockquote>
-<pre><code>lindex $list1 1
-</code></pre>
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">lindex $list1 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p>lappend: 末尾加入新元素，例：</p>
 </blockquote>
-<pre><code>lappend list1 1
-</code></pre>
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">lappend list1 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <blockquote>
 <p>lsort: 排序，后面可加参数 -real 按浮点数大小排  -unique 删除重复，例：</p>
 </blockquote>
-<pre><code>lsort (real) $list1
-</code></pre>
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">lsort (real) $list1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h2 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h2><blockquote>
 <p>if语句：和c语言中的if语句功能十分相似，例</p>
 </blockquote>
-<pre><code>if &#123; 表达式 &#125; &#123;
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">if &#123; 表达式 &#125; &#123;
 
             #运算;
 
@@ -549,15 +545,14 @@ puts $list;
 
              #其他运算;
 
-        &#125;
-</code></pre>
+        &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>foreach语句：把列表里第0个元素开始，依次把值赋给变量，例：</p>
 </blockquote>
-<pre><code>foreach i $list&#123;  # 把list里的元素依次给i
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">foreach i $list&#123;  # 把list里的元素依次给i
 puts $i
-&#125;
-</code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <blockquote>
 <p>break语句</p>
 </blockquote>
@@ -572,30 +567,33 @@ puts $i
 <blockquote>
 <p>for语句结构：for{initialization} {condition} {increment} {body}，例：</p>
 </blockquote>
-<pre><code>for &#123;set i 0&#125; &#123;$i&lt; 10&#125; &#123;incr i&#125; &#123;puts $i;&#125;  
-#将打印出0到9`
-</code></pre>
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">for &#123;set i 0&#125; &#123;$i&lt; 10&#125; &#123;incr i&#125; &#123;puts $i;&#125;  
+#将打印出0到9&#96;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h2 id="过程函数"><a href="#过程函数" class="headerlink" title="过程函数"></a>过程函数</h2><img src="/img/tcl/proc.png" width = "100%">
 
 <h2 id="正则匹配"><a href="#正则匹配" class="headerlink" title="正则匹配"></a>正则匹配</h2><blockquote>
 <p>正则表达式是按照字符匹配规则提取出自己需要的字符内容，字符匹配规则如下：<br>正则表达式的\w，是匹配一个字母、数字或下划线，<br>正则表达式的\d,是匹配数字，<br>正则表达式的\s，用来匹配空格，<br>正则表达式的<code>.</code>,用来匹配任一字符，<br>正则表达式的<code>*</code>用来进行零次或多次匹配，<code>+</code>用来一次或多次匹配，<code>?</code>用来零次或一次匹配，<br>正则表达式的<code>^</code>用来表示字符串开头，<code>$</code>表示字符串结尾。</p>
 </blockquote>
 <p>我们使用正则匹配指令regexp来进行正则匹配。例：</p>
-<pre><code>regexp &#123;\s(\d+).*&#125; &quot;snow is 30 years old&quot; total age 
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">regexp &#123;\s(\d+).*&#125; &quot;snow is 30 years old&quot; total age 
 puts $total
 #输出30 years old
 puts $age
-#输出30
-</code></pre>
+#输出30<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h2><blockquote>
 <p>文本处理在日常生活中十分常用，tcl脚本中用于文本处理的一般是open,gets,close;例：</p>
 </blockquote>
-<pre><code>set f01 [open &quot;fix.tcl&quot; w];# 命令表示 打开或者新建一个文件“fix.tcl”，并将其 file ID 设置为 f01，后续就以这个 file ID 来操作这个文件；
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">set f01 [open &quot;fix.tcl&quot; w];# 命令表示 打开或者新建一个文件“fix.tcl”，并将其 file ID 设置为 f01，后续就以这个 file ID 来操作这个文件；
 
 puts  $f01 &quot;size_cell $cel_name $ref_name&quot; ;#这条命令表示将这个字符串写入文件 fix.tcl，并自动追加换行符；
 
 close $f01 ;#对文件操作完成后，需要将其关闭
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 
                 
             </div>

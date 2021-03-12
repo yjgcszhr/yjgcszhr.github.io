@@ -17,7 +17,7 @@
 
 
     <title>modelsim使用到的一些tcl脚本 | hongruizhu</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="/medias/top1.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -42,7 +42,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/comment_bg.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/zhr1.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">hongruizhu</span>
                 </a>
@@ -130,7 +130,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/comment_bg.png" class="logo-img circle responsive-img">
+        <img src="/medias/zhr1.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">hongruizhu</div>
         <div class="logo-desc">
@@ -448,7 +448,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    374
+                    442
                 </div>
                 
 
@@ -465,6 +465,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
         <!-- 代码块折行 -->
@@ -475,42 +478,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="常用指令简介"><a href="#常用指令简介" class="headerlink" title="常用指令简介"></a>常用指令简介</h2><blockquote>
+                <p>日常modelsim仿真，每次都需要建立工程，添加波形，很是麻烦，于是我就上网搜了一下，总结写了一点脚本来自动编译仿真代码文件。菜鸟学习中，写得不当，还请指正。</p>
+<h2 id="常用指令简介"><a href="#常用指令简介" class="headerlink" title="常用指令简介"></a>常用指令简介</h2><blockquote>
 <p>vlib work :创建名叫work的工作库<br>vmap work work : 映射逻辑库名work到指定的目录<br>vlog test.v :编译名叫test的verilog文件<br>vcom test.vhd :编译名叫test的vhdl文件<br>vsim -voptargs=+acc -L altera_mf test: 仿真test文件，-L表示使用altera库<br><code>add wave /*</code> : 将所有信号waveform dump出来</p>
 </blockquote>
 <h2 id="实际操作"><a href="#实际操作" class="headerlink" title="实际操作"></a>实际操作</h2><blockquote>
 <p>创建一个名叫run的文本文档，将后缀名改为.bat<br>填写内容： </p>
 </blockquote>
-<pre><code>#C:\modeltech64_10.5\win64\modelsim -do mrun.do
+<pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">#C:\modeltech64_10.5\win64\modelsim -do mrun.do
 #用modelsim仿真则注释下面,根据modelsim安装路径填写上面路径
 C:\questasim64_10.6c\win64\questasim -do mrun.do
-#用questasim仿真则注释上面
-</code></pre>
+#用questasim仿真则注释上面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后关闭</p>
 <blockquote>
 <p>创建一个名叫mrun的文本文档，将后缀名改为.do<br>填写内容;</p>
 </blockquote>
-<pre><code>.main clear
+<pre class="line-numbers language-none"><code class="language-none">.main clear
 #清空命令行
 vlib work
 vmap work work
 vlog altera_mf.v
 vlog filelist.sv
 #大型工程中，文件众多，可以在filelist中include所有文件
-vsim -novopt -voptargs=+acc work.dma_test_top
+vsim -novopt -voptargs&#x3D;+acc work.dma_test_top
 #使用vopt进行设计优化，常与+acc配合使用
-add log -r /*
+add log -r &#x2F;*
 #添加日志，方便仿真中每次添加信号后能自动显示其值，不用重新run
 do wave.do
-run 10ms
-</code></pre>
+run 10ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后关闭</p>
 <blockquote>
 <p>创建一个名叫wave的文本文档，将后缀名改为.do<br>填写内容：</p>
 </blockquote>
-<pre><code>add wave –hex /top/clk
-#根据信号引脚填写
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">add wave –hex &#x2F;top&#x2F;clk
+#根据信号引脚填写<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>为什么要另创建一个wave文件，而不是直接写在mrun.do里，是方便在波形展示界面添加需要查看的信号后可以点击保存信号列表文件，然后覆盖wave文件</p>
 
                 
