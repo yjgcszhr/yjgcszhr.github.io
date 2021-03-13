@@ -448,14 +448,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    442
+                    528
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -480,10 +480,12 @@
             <div id="articleContent">
                 <p>日常modelsim仿真，每次都需要建立工程，添加波形，很是麻烦，于是我就上网搜了一下，总结写了一点脚本来自动编译仿真代码文件。菜鸟学习中，写得不当，还请指正。</p>
 <h2 id="常用指令简介"><a href="#常用指令简介" class="headerlink" title="常用指令简介"></a>常用指令简介</h2><blockquote>
-<p>vlib work :创建名叫work的工作库<br>vmap work work : 映射逻辑库名work到指定的目录<br>vlog test.v :编译名叫test的verilog文件<br>vcom test.vhd :编译名叫test的vhdl文件<br>vsim -voptargs=+acc -L altera_mf test: 仿真test文件，-L表示使用altera库<br><code>add wave /*</code> : 将所有信号waveform dump出来</p>
+<p>vlib work :创建名叫work的工作库<br>vmap work work : 映射逻辑库名work到指定的目录<br>vlog test.v :编译名叫test的verilog文件<br>vcom test.vhd :编译名叫test的vhdl文件<br>vsim -voptargs=+acc -L altera_mf test: 仿真test文件，-L表示使用altera库<br><code>add wave /*</code> : 将所有信号waveform dump出来<br>quit -sim : 停止仿真<br>run 10ms :运行10个ms</p>
 </blockquote>
 <h2 id="实际操作"><a href="#实际操作" class="headerlink" title="实际操作"></a>实际操作</h2><blockquote>
-<p>创建一个名叫run的文本文档，将后缀名改为.bat<br>填写内容： </p>
+<ol>
+<li>创建一个名叫run的文本文档，将后缀名改为.bat<br>填写内容： </li>
+</ol>
 </blockquote>
 <pre class="line-numbers language-tcl" data-language="tcl"><code class="language-tcl">#C:\modeltech64_10.5\win64\modelsim -do mrun.do
 #用modelsim仿真则注释下面,根据modelsim安装路径填写上面路径
@@ -491,7 +493,9 @@ C:\questasim64_10.6c\win64\questasim -do mrun.do
 #用questasim仿真则注释上面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后关闭</p>
 <blockquote>
-<p>创建一个名叫mrun的文本文档，将后缀名改为.do<br>填写内容;</p>
+<ol start="2">
+<li>创建一个名叫mrun的文本文档，将后缀名改为.do<br>填写内容;</li>
+</ol>
 </blockquote>
 <pre class="line-numbers language-none"><code class="language-none">.main clear
 #清空命令行
@@ -508,11 +512,26 @@ do wave.do
 run 10ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后关闭</p>
 <blockquote>
-<p>创建一个名叫wave的文本文档，将后缀名改为.do<br>填写内容：</p>
+<ol start="3">
+<li>创建一个名叫wave的文本文档，将后缀名改为.do<br>填写内容：</li>
+</ol>
 </blockquote>
 <pre class="line-numbers language-none"><code class="language-none">add wave –hex &#x2F;top&#x2F;clk
 #根据信号引脚填写<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>为什么要另创建一个wave文件，而不是直接写在mrun.do里，是方便在波形展示界面添加需要查看的信号后可以点击保存信号列表文件，然后覆盖wave文件</p>
+<p>为什么要另创建一个wave文件，而不是直接写在mrun.do里，是方便在波形展示界面添加需要查看的信号后可以点击保存信号列表文件，然后覆盖wave文件<br><img src= "/img/modelsim/wave.png" width= "100%"></p>
+<blockquote>
+<ol start="4">
+<li>filelist文件编写</li>
+</ol>
+</blockquote>
+<pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">&#96;include  &quot;.&#x2F;..&#x2F;env&#x2F;ram&#x2F;ram_400_128.v&quot; &#x2F;&#x2F;路径要使用相对路径，本工作目录是和work文件夹在同一目录
+&#96;include  &quot;.&#x2F;..&#x2F;env&#x2F;ram&#x2F;ram_400_128_add_csn.v&quot;&#x2F;&#x2F; .&#x2F;表示在同一路径   ..&#x2F;表示返回上一目录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+
+
 
                 
             </div>
