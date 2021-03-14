@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-03-13T15:17:09.621Z</updated>
+  <updated>2021-03-14T04:28:24.706Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨时钟域问题解决</title>
+    <link href="http://yjgcszhr.github.io/2021/03/13/kua-shi-zhong-yu-wen-ti-jie-jue/"/>
+    <id>http://yjgcszhr.github.io/2021/03/13/kua-shi-zhong-yu-wen-ti-jie-jue/</id>
+    <published>2021-03-13T15:20:06.000Z</published>
+    <updated>2021-03-14T04:28:24.706Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;当信号产生于一个时钟域，并穿过该时钟域边界，作用于另一时钟域时，称该信号为跨时钟信号，由&lt;br&gt;此引发的一系列问题称之为 CDC(clock domain crossing, 简称 CDC)问题。&lt;/p&gt;
+&lt;h2 id=&quot;跨时钟域风险&quot;&gt;&lt;a href=&quot;#跨时钟域风险&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="CDC" scheme="http://yjgcszhr.github.io/tags/CDC/"/>
+    
+    <category term="verilog" scheme="http://yjgcszhr.github.io/tags/verilog/"/>
+    
+    <category term="IC设计" scheme="http://yjgcszhr.github.io/tags/IC%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>modelsim使用到的一些tcl脚本</title>

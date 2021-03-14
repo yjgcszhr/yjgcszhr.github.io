@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>跨时钟域问题解决</title>
+      <link href="2021/03/13/kua-shi-zhong-yu-wen-ti-jie-jue/"/>
+      <url>2021/03/13/kua-shi-zhong-yu-wen-ti-jie-jue/</url>
+      
+        <content type="html"><![CDATA[<p>当信号产生于一个时钟域，并穿过该时钟域边界，作用于另一时钟域时，称该信号为跨时钟信号，由<br>此引发的一系列问题称之为 CDC(clock domain crossing, 简称 CDC)问题。</p><h2 id="跨时钟域风险"><a href="#跨时钟域风险" class="headerlink" title="跨时钟域风险"></a>跨时钟域风险</h2><h3 id="1-亚稳态"><a href="#1-亚稳态" class="headerlink" title="1. 亚稳态"></a>1. 亚稳态</h3><blockquote><p>因为进入的数据未能满足触发器的建立时间和保持时间，触发器的输出在一段时间内无法保持一个确定的状态。如下图1所示，clkA和clkB为不同时钟，第一个触发器输出在DFF2的建立时间和保持时间内不断变化，导致DFF2的输出有误，上下动弹甚至出错，出现了亚稳态现象。图2所示为出现亚稳态时的时序图。<br><img src="/img/CDC/a1.png" alt="图1 跨时钟域电路"><br><img src="/img/CDC/a2.png" alt="图2 亚稳态时序图"></p></blockquote><h3 id="2-数据丢失"><a href="#2-数据丢失" class="headerlink" title="2. 数据丢失"></a>2. 数据丢失</h3><blockquote><p>当数据从快时钟域进入慢时钟域时，会出现慢时钟域没有采样到快时钟域的信号，从而出现数据丢失的情况，进而导致系统出现故障。如下图所示，快时钟域 clockA 输出脉冲信号 Q1 到慢时钟域 clockB，在右侧时序图中可以看到此时 clockB 时钟根本没有采样到该脉冲信号。<br><img src="/img/CDC/a4.png" alt="图3 数据丢失电路"><br><img src="/img/CDC/a5.png" alt="图4 电路时序图"></p></blockquote><h2 id="跨时钟域处理"><a href="#跨时钟域处理" class="headerlink" title="跨时钟域处理"></a>跨时钟域处理</h2><h3 id="1-两级同步"><a href="#1-两级同步" class="headerlink" title="1. 两级同步"></a>1. 两级同步</h3><blockquote><p>两级同步就是我们常说的“打两拍”，这可以有效降低亚稳态出现的概率。<strong>两级同步处理只适合单比特电路</strong>。<br>下图所示为两级同步原理图，图中 DB1 是第一个触发器的输出，Dout 是第二个触发器的输出。Dout<br>用来避免亚稳态信号传递到其他后续电路中，一旦同步后的信号有机会稳定下来，就会把信号传递出去。<br>两个触发器之间不加任何逻辑，可以为信号稳定争取足够的时间。<br><img src="/img/CDC/a6.png" alt="图5 两级同步电路"><br><img src="/img/CDC/a7.png" alt="图6 电路时序图"></p></blockquote><h3 id="2-信号展宽"><a href="#2-信号展宽" class="headerlink" title="2. 信号展宽"></a>2. 信号展宽</h3><blockquote><p>信号展宽主要是解决单比特信号<strong>从快时钟域跨越到慢时钟域</strong>时产生信号丢失风险。在快时钟域将跨时<br>钟域信号至少展宽成慢时钟域时钟周期的两倍，使得跨时钟域信号对于目的时钟域来说是一种电平信号。<br>如下图所示，左侧红色椭圆圈内是展宽逻辑，这里仅做示意，只展宽成发送时钟域的两个时钟周期。<br><img src="/img/CDC/a11.png" alt="图8 信号展宽电路图及时序图"></p></blockquote><h3 id="3-格雷码"><a href="#3-格雷码" class="headerlink" title="3. 格雷码"></a>3. 格雷码</h3><blockquote><p>格雷码的独特之处在于相邻两数变换的时候只有1个bit发生改变，通常用于异步fifo的地址传递。所以对于总线的数据，在跨时钟传递前应该进行格雷码转换，然后再传递出去。<br><img src="/img/CDC/a8.png" alt="图9 格雷码转换电路图"></p></blockquote><h3 id="4-握手电路"><a href="#4-握手电路" class="headerlink" title="4. 握手电路"></a>4. 握手电路</h3><blockquote><p><strong>note：仅适用于快时钟域向慢时钟域的数据传输</strong><br>握手电路的步骤是：</p></blockquote><ol><li>源时钟域向目的时钟域发送req信号和数据信号</li><li>目的时钟域接收到req和数据信号后，会回发一个ack信号</li><li>源时钟域接收到ack信号后会拉低req信号，整个数据交换完成<br><img src="/img/CDC/a9.png" alt="图10 握手电路原理图"></li></ol><p><strong>note: req信号和ack信号要在对方时钟域进行两级同步</strong><br><img src="/img/CDC/a10.png" alt="图11 握手电路时序图"></p><h3 id="5-异步fifo"><a href="#5-异步fifo" class="headerlink" title="5. 异步fifo"></a>5. 异步fifo</h3><blockquote><p>一般情况下，基本会采用异步fifo传递数据，不受任何限制。但是异步fifo非常消耗资源。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CDC </tag>
+            
+            <tag> verilog </tag>
+            
+            <tag> IC设计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>modelsim使用到的一些tcl脚本</title>
       <link href="2021/03/11/modelsim-shi-yong-dao-de-yi-xie-tcl-jiao-ben/"/>
       <url>2021/03/11/modelsim-shi-yong-dao-de-yi-xie-tcl-jiao-ben/</url>
