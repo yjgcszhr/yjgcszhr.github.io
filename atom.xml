@@ -123,8 +123,8 @@
     <title>Hello World</title>
     <link href="http://yjgcszhr.github.io/2021/03/05/hello-world/"/>
     <id>http://yjgcszhr.github.io/2021/03/05/hello-world/</id>
-    <published>2021-03-05T07:14:20.995Z</published>
-    <updated>2021-03-05T07:14:20.996Z</updated>
+    <published>2021-03-05T15:20:06.000Z</published>
+    <updated>2021-03-14T06:22:47.075Z</updated>
     
     
       
@@ -137,6 +137,10 @@
     
     
     
+    <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="hexo" scheme="http://yjgcszhr.github.io/tags/hexo/"/>
     
   </entry>
   
