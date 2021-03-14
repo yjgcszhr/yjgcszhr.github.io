@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-03-14T04:28:24.706Z</updated>
+  <updated>2021-03-14T08:57:23.097Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -17,11 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>随笔</title>
+    <link href="http://yjgcszhr.github.io/posts/a9a8.html"/>
+    <id>http://yjgcszhr.github.io/posts/a9a8.html</id>
+    <published>2021-03-14T15:20:06.000Z</published>
+    <updated>2021-03-14T08:57:23.097Z</updated>
+    
+    
+    <summary type="html">个人每周随笔，不定期更新</summary>
+    
+    
+    
+    
+    <category term="水笔" scheme="http://yjgcszhr.github.io/tags/%E6%B0%B4%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>跨时钟域问题解决</title>
-    <link href="http://yjgcszhr.github.io/2021/03/13/kua-shi-zhong-yu-wen-ti-jie-jue/"/>
-    <id>http://yjgcszhr.github.io/2021/03/13/kua-shi-zhong-yu-wen-ti-jie-jue/</id>
+    <link href="http://yjgcszhr.github.io/posts/1635.html"/>
+    <id>http://yjgcszhr.github.io/posts/1635.html</id>
     <published>2021-03-13T15:20:06.000Z</published>
-    <updated>2021-03-14T04:28:24.706Z</updated>
+    <updated>2021-03-14T07:08:25.887Z</updated>
     
     
       
@@ -48,10 +65,10 @@
   
   <entry>
     <title>modelsim使用到的一些tcl脚本</title>
-    <link href="http://yjgcszhr.github.io/2021/03/11/modelsim-shi-yong-dao-de-yi-xie-tcl-jiao-ben/"/>
-    <id>http://yjgcszhr.github.io/2021/03/11/modelsim-shi-yong-dao-de-yi-xie-tcl-jiao-ben/</id>
+    <link href="http://yjgcszhr.github.io/posts/5e6f.html"/>
+    <id>http://yjgcszhr.github.io/posts/5e6f.html</id>
     <published>2021-03-11T12:11:51.000Z</published>
-    <updated>2021-03-14T06:10:15.201Z</updated>
+    <updated>2021-03-14T07:08:25.885Z</updated>
     
     
       
@@ -68,18 +85,18 @@
     <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
     
     
-    <category term="tcl" scheme="http://yjgcszhr.github.io/tags/tcl/"/>
-    
     <category term="modelsim" scheme="http://yjgcszhr.github.io/tags/modelsim/"/>
+    
+    <category term="tcl" scheme="http://yjgcszhr.github.io/tags/tcl/"/>
     
   </entry>
   
   <entry>
     <title>tcl快速入门</title>
-    <link href="http://yjgcszhr.github.io/2021/03/08/tcl/"/>
-    <id>http://yjgcszhr.github.io/2021/03/08/tcl/</id>
+    <link href="http://yjgcszhr.github.io/posts/cb9b.html"/>
+    <id>http://yjgcszhr.github.io/posts/cb9b.html</id>
     <published>2021-03-08T12:11:51.000Z</published>
-    <updated>2021-03-12T15:02:52.446Z</updated>
+    <updated>2021-03-14T07:08:25.886Z</updated>
     
     
       
@@ -102,10 +119,10 @@
   
   <entry>
     <title>markdown语法</title>
-    <link href="http://yjgcszhr.github.io/2021/03/06/markdown-yu-fa/"/>
-    <id>http://yjgcszhr.github.io/2021/03/06/markdown-yu-fa/</id>
+    <link href="http://yjgcszhr.github.io/posts/b859.html"/>
+    <id>http://yjgcszhr.github.io/posts/b859.html</id>
     <published>2021-03-06T13:27:04.000Z</published>
-    <updated>2021-03-07T11:05:27.678Z</updated>
+    <updated>2021-03-14T07:08:25.884Z</updated>
     
     
     <summary type="html">&lt;p&gt;Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。笔者写这篇文章主要是写给自己看，熟能生巧，也顺便推广一波markdown。&lt;/p&gt;</summary>
@@ -121,10 +138,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yjgcszhr.github.io/2021/03/05/hello-world/"/>
-    <id>http://yjgcszhr.github.io/2021/03/05/hello-world/</id>
+    <link href="http://yjgcszhr.github.io/posts/3eeb.html"/>
+    <id>http://yjgcszhr.github.io/posts/3eeb.html</id>
     <published>2021-03-05T15:20:06.000Z</published>
-    <updated>2021-03-14T06:22:47.075Z</updated>
+    <updated>2021-03-14T08:37:27.118Z</updated>
     
     
       
