@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-03-14T08:57:23.097Z</updated>
+  <updated>2021-03-15T09:12:10.904Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vcs+verdi安装经历</title>
+    <link href="http://yjgcszhr.github.io/posts/d3e2.html"/>
+    <id>http://yjgcszhr.github.io/posts/d3e2.html</id>
+    <published>2021-03-15T07:50:28.000Z</published>
+    <updated>2021-03-15T09:12:10.904Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一直以来我都使用modelsim来进行仿真，也偶尔使用debussy查看波形，最近在别人的推荐下，我开始尝试使用vcs+verdi环境，&lt;br&gt;这篇文章用来记录自己苦逼的安装经历。之前自己下载了vcs verdi</summary>
+        
+      
+    
+    
+    
+    <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="vcs" scheme="http://yjgcszhr.github.io/tags/vcs/"/>
+    
+    <category term="verdi" scheme="http://yjgcszhr.github.io/tags/verdi/"/>
+    
+  </entry>
   
   <entry>
     <title>随笔</title>

@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>vcs+verdi安装经历</title>
+      <link href="posts/d3e2.html"/>
+      <url>posts/d3e2.html</url>
+      
+        <content type="html"><![CDATA[<p>一直以来我都使用modelsim来进行仿真，也偶尔使用debussy查看波形，最近在别人的推荐下，我开始尝试使用vcs+verdi环境，<br>这篇文章用来记录自己苦逼的安装经历。之前自己下载了vcs verdi sysnopsys等安装包，动手安装但始终会出现一些问题，鉴于<br>时间宝贵，我就直接找了现成安装好的资源。<br>此处感谢微信公众号“芯王国”提供的已经安装好sysnopsys全家桶的vmware虚拟机资源。</p><h2 id="下载资源"><a href="#下载资源" class="headerlink" title="下载资源"></a>下载资源</h2><blockquote><p>百度云盘链接：<a href="https://pan.baidu.com/s/1enBg_oE8qw9EhU1G9M1qdQ">https://pan.baidu.com/s/1enBg_oE8qw9EhU1G9M1qdQ</a><br>  提取码：8bhi<br>  下载所有文件，然后解压后缀名为.zip的文件，使用vmware打开启动，选择“我已移动”</p></blockquote><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote><p>使用terminal终端输入verdi,会出现error:找不到liscense<br>此处我发现公众号提供的虚拟机没有写好环境变量文件，所以我们需要自己去配置。打开etc目录，找到bashrc文件进行修改，或者<br>terminal终端输入</p></blockquote><pre class="line-numbers language-linux" data-language="linux"><code class="language-linux">cd &#x2F;etcsudo gedit bashrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>在bashrc最后添加以下内容：</p><pre class="line-numbers language-none"><code class="language-none">export DVE_HOME&#x3D;&#x2F;home&#x2F;synopsys&#x2F;vcs&#x2F;O-2018.09-SP2export VCS_HOME&#x3D;&#x2F;home&#x2F;synopsys&#x2F;vcs&#x2F;O-2018.09-SP2export VCS_MX_HOME&#x3D;&#x2F;home&#x2F;synopsys&#x2F;vcs-mx&#x2F;O-2018.09-SP2export LD_LIBRARY_PATH&#x3D;&#x2F;home&#x2F;synopsys&#x2F;verdi&#x2F;Verdi_O-2018.09-SP2&#x2F;share&#x2F;PLI&#x2F;VCS&#x2F;LINUX64export VERDI_HOME&#x3D;&#x2F;home&#x2F;synopsys&#x2F;verdi&#x2F;Verdi_O-2018.09-SP2export SCL_HOME&#x3D;&#x2F;home&#x2F;synopsys&#x2F;scl&#x2F;2018.06#dvePATH&#x3D;$PATH:$VCS_HOME&#x2F;gui&#x2F;dve&#x2F;binalias dve&#x3D;&quot;dve&quot;#VCSPATH&#x3D;$PATH:$VCS_HOME&#x2F;binalias vcs&#x3D;&quot;vcs&quot;#VERDIPATH&#x3D;$PATH:$VERDI_HOME&#x2F;binalias verdi&#x3D;&quot;verdi&quot;#sclPATH&#x3D;$PATH:$SCL_HOME&#x2F;linux64&#x2F;binexport VCS_ARCH_OVERRIDE&#x3D;linux#LICENCEexport LM_LICENSE_FILE&#x3D;27000@localhost.localdomainalias lmg_synopsys&#x3D;&quot;lmgrd -c &#x2F;home&#x2F;synopsys&#x2F;scl&#x2F;2018.06&#x2F;admin&#x2F;license&#x2F;Synopsys.dat&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>点击保存，然后terminal输入：<br><code>source bashrc</code><br><code>lmg_synopsys</code>,<br>我们可以验证license是否正确，可以输入verdi<br>如果没有出现license错误，那就可以使用了<br><strong>note:每次虚拟机打开后都要输入<code>lmg_synopsys</code></strong><br><strong>note:我们最好还要打开/home/synopsys/scl/2018.06/admin/license，查看license.dat文件，查看前两行是否正确：</strong></p><pre class="line-numbers language-none"><code class="language-none">SERVER localhost.localdomain 000c2967fe8c 27000DAEMON snpslmd &#x2F;home&#x2F;synopsys&#x2F;scl&#x2F;2018.06&#x2F;linux64&#x2F;bin&#x2F;snpslmd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>再次感谢公众号“芯王国”提供的支持。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vcs </tag>
+            
+            <tag> verdi </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>随笔</title>
       <link href="posts/a9a8.html"/>
       <url>posts/a9a8.html</url>
