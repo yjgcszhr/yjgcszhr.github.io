@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-03-15T09:12:10.904Z</updated>
+  <updated>2021-03-18T12:17:01.107Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>时序约束入门</title>
+    <link href="http://yjgcszhr.github.io/posts/fd6e.html"/>
+    <id>http://yjgcszhr.github.io/posts/fd6e.html</id>
+    <published>2021-03-17T13:50:37.000Z</published>
+    <updated>2021-03-18T12:17:01.107Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="IC设计" scheme="http://yjgcszhr.github.io/tags/IC%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="STA" scheme="http://yjgcszhr.github.io/tags/STA/"/>
+    
+  </entry>
   
   <entry>
     <title>vcs+verdi安装经历</title>
@@ -65,7 +92,7 @@
     <link href="http://yjgcszhr.github.io/posts/1635.html"/>
     <id>http://yjgcszhr.github.io/posts/1635.html</id>
     <published>2021-03-13T15:20:06.000Z</published>
-    <updated>2021-03-14T07:08:25.887Z</updated>
+    <updated>2021-03-15T15:31:00.172Z</updated>
     
     
       
@@ -149,7 +176,7 @@
     <link href="http://yjgcszhr.github.io/posts/b859.html"/>
     <id>http://yjgcszhr.github.io/posts/b859.html</id>
     <published>2021-03-06T13:27:04.000Z</published>
-    <updated>2021-03-14T07:08:25.884Z</updated>
+    <updated>2021-03-15T15:13:50.349Z</updated>
     
     
     <summary type="html">&lt;p&gt;Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。笔者写这篇文章主要是写给自己看，熟能生巧，也顺便推广一波markdown。&lt;/p&gt;</summary>
