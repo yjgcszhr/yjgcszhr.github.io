@@ -448,7 +448,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    551
+                    574
                 </div>
                 
 
@@ -504,13 +504,14 @@ vmap work work
 vlog altera_mf.v
 vlog filelist.sv
 #大型工程中，文件众多，可以在filelist中include所有文件
+#也可以换成vlog src&#x2F;*.v，这需要所以代码放进同一文件夹
 vsim -novopt -voptargs&#x3D;+acc work.dma_test_top
 #使用vopt进行设计优化，常与+acc配合使用
 #vsim用来仿真顶部模块，一般是tb文件，例如上面换成work.test_tb
 add log -r &#x2F;*
 #添加日志，方便仿真中每次添加信号后能自动显示其值，不用重新run
 do wave.do
-run 10ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+run 10ms<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>然后关闭</p>
 <blockquote>
 <ol start="3">
