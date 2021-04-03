@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>AMBA总线（2）——axi4_stream总线</title>
+      <link href="posts/4372.html"/>
+      <url>posts/4372.html</url>
+      
+        <content type="html"><![CDATA[<p>AXI4-stream接口连接产生数据的一个主设备和接收数据的一个从设备，用来传播数据流，和其他AXI协议不同的是，AXI4-stream不需要主机提供地址，使用相对方便，当传输单数据时其数据传输时序与第一讲的APB总线就少了个地址信息的，其他大致相同。</p><h2 id="接口信号"><a href="#接口信号" class="headerlink" title="接口信号"></a>接口信号</h2><blockquote><p>ACLK: 系统时钟<br>ARESTEN: 复位信号，低电平有效<br>TVALID: 表示主机正在进行数据传输<br>TREADY: 表示从机已经做好数据接收的准备<br>TDATA: 传输的数据<br>TSTRB: 字节控制信号，按照byte指定data中的哪个byte是地址信息或者数据信息；<br>TKEEP: 字节控制信号，指定data中的哪个byte是字节修饰符，哪个是有效的。<br>TLAST: 表示数据流的最后标志<br>TID: 标识符，表示不同数据流<br>TDEST: 提供路由信息<br>TUSER: 用户自定义信息<br><strong>PS:如果TKEEP引脚不在的话，TSTRB承担指定字节有效的功能</strong></p></blockquote><h2 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h2><blockquote><p>首先主设备给出数据和控制信息，并拉高TVALID信号，然后等待从机的TREADY信号，一旦TREADY信号为高，数据就开始传输，一般来说，无论TVALID和TREADY谁先到达，只有当TVALID和TREADY信号同时为高时，一次传输才算完成。如果连续多包数据传输的话，TVALID将一直拉高，直到最后一包数据传输，TLAST拉高。传输完成后，TVALID拉低，TLAST拉低。<br>直接放图会更容易理解。以下为TVALID和TREADY握手示意图：<br><img src="/img/axi_stream/d1.png" alt="TVALID在TREADY前握手"><br><img src="/img/axi_stream/d2.png" alt="TVALID在TREADY后握手"><br><img src="/img/axi_stream/d3.png" alt="TVALID和TREADY同时握手"></p></blockquote><p>多次连续传输示意图，<br><img src="/img/axi_stream/d4.png" alt="axi_stream多数据传输"></p><h2 id="修改自定义AXI4-stream-ip核"><a href="#修改自定义AXI4-stream-ip核" class="headerlink" title="修改自定义AXI4-stream ip核"></a>修改自定义AXI4-stream ip核</h2><blockquote><p>官方生成的带有AXI4-stream接口的IP核，是用一个二维数组来存放stream——data，但这不方便读出来进行二次开发，于是我做了一点改动，官方源码部分截图如下<br><img src="/img/axi_stream/d5.png"><br>笔者修改后的源码部分：</p></blockquote><pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">   reg  [0 : NUMBER_OF_INPUT_WORDS-1] [C_S_AXIS_TDATA_WIDTH-1:0] data_fifo ;&#x2F;&#x2F; FIFO Implementationgenerate   for(byte_index&#x3D;0; byte_index&lt;&#x3D; (C_S_AXIS_TDATA_WIDTH&#x2F;8-1); byte_index&#x3D;byte_index+1)  begin:FIFO_GEN   &#x2F;&#x2F; reg  [(C_S_AXIS_TDATA_WIDTH&#x2F;4)-1:0] stream_data_fifo [0 : NUMBER_OF_INPUT_WORDS-1];    &#x2F;&#x2F; Streaming input data is stored in FIFO    always @( posedge S_AXIS_ACLK )    begin      if (fifo_wren &amp;&amp; S_AXIS_TSTRB[byte_index])        begin          data_fifo[write_pointer][(byte_index*8+7) -: 8] &lt;&#x3D; S_AXIS_TDATA[(byte_index*8+7) -: 8];         end      end&#x2F;&#x2F; always@(*) begin &#x2F;&#x2F; data_fifo[write_pointer][(byte_index*8+7) -: 8] &#x3D; stream_data_fifo[write_pointer];&#x2F;&#x2F; end   end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 理论知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AXI4-stream </tag>
+            
+            <tag> AMBA总线 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AMBA总线（1）——APB总线</title>
       <link href="posts/982f.html"/>
       <url>posts/982f.html</url>
