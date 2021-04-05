@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-04-04T15:06:59.261Z</updated>
+  <updated>2021-04-05T09:07:27.795Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>杂谈1</title>
+    <link href="http://yjgcszhr.github.io/posts/e70.html"/>
+    <id>http://yjgcszhr.github.io/posts/e70.html</id>
+    <published>2021-04-05T09:07:27.000Z</published>
+    <updated>2021-04-05T09:07:27.795Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>systemverilog学习日记（一）</title>
