@@ -499,14 +499,14 @@
                 <p>IC前端设计需要设计人员编写testbench来进行对模块的初步前仿，一般是用verilog来写，但是verilog语言结构简单，编写一个稍微复杂的仿真环境很是费力，所以systemverilog便被开发设计出来。systemVerilog是一门高级语言，官方描述为：<br>SystemVerilog简称为SV语言，是一种相当新的语言，它建立在Verilog语言的基础上，是 IEEE 1364 Verilog-2001 标准的扩展增强，兼容Verilog 2001，将硬件描述语言（HDL）与现代的高层级验证语言（HVL）结合了起来，并新近成为下一代硬件设计和验证的语言。<br>既可以用作设计又可以用作验证，功能十分强大，所以多学一门systemverilog会让你如虎添翼。笔者本着学无止境的态度，开始接触学习systemverilog.开始吧，一步一个脚印。</p>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="内建数据类型"><a href="#内建数据类型" class="headerlink" title="内建数据类型"></a>内建数据类型</h3><p>什么语言一开始都要从基本数据类型学起，sv也不例外。sv的数据类型像是继承了c语言的很多特色，除了byte 、int、shortint、longint这些c语言里经常看到的，SV还加了logic<br>、bit等。接下我解释一下这些类型怎么个用法。</p>
 <blockquote>
-<p>logic ： 单比特，reg型和wire型综合，只能被单一驱动<br>bit: 这个比较常用，可以自由定义位宽，例如</p>
+<p>logic: 单比特，reg型和wire型综合，只能被单一驱动<br>bit: 这个比较常用，可以自由定义位宽，例如</p>
 </blockquote>
 <pre class="line-numbers language-sv" data-language="sv"><code class="language-sv">bit b;    &#x2F;&#x2F;单比特
 bit [15:0] data;&#x2F;&#x2F;16比特数据，无符号
 rand bit [15:0] r_data;&#x2F;&#x2F; 写testbench时经常会加上rand,用于生成随机化数据。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p>byte: 8比特有符号数据<br>int： 32比特有符号数据<br>shortint： 16比特有符号整数<br>longint: 64比特有符号整数</p>
+<p>byte: 8比特有符号数据<br>int: 32比特有符号数据<br>shortint: 16比特有符号整数<br>longint: 64比特有符号整数</p>
 </blockquote>
 <p><strong>这些都可以用bit来代替，而且Bit是无符号的，bit [7:0] 等于 byte unsigned</strong></p>
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组可分成定宽数组和动态数组，定宽数组又可以分成压缩数组和非压缩数组，</p>
