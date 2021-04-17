@@ -488,7 +488,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    952
+                    954
                 </div>
                 
 
@@ -560,7 +560,7 @@ assign sum &#x3D; sum1+sum2+sum3;<span aria-hidden="true" class="line-numbers-ro
 <p>3、在代码中标注信号属性，规定扇出数目，剩下的交给综合器进行优化。</p>
 <pre class="line-numbers language-none"><code class="language-none">(* max_fanout &#x3D; &quot;3&quot; *)reg  signed [15:0] din_d;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="保持时间问题"><a href="#保持时间问题" class="headerlink" title="保持时间问题"></a>保持时间问题</h2><p>保持时间违例原因只有延时不够，其公式分析前文已经讲过，解决的办法很简单就是插入buffer,要么综合器自己优化插入，要么手动插入。我推荐输入命令让综合器自己生成buffer，如果保持时间违例少量的话，可以手动在网表里插入延迟。</p>
+<h2 id="保持时间问题"><a href="#保持时间问题" class="headerlink" title="保持时间问题"></a>保持时间问题</h2><p>保持时间违例原因只有延时不够，其公式分析前文已经讲过，解决的办法很简单就是插入buffer,要么综合器自己优化插入，要么手动插入。我推荐输入命令set_fix_hold(DC)让综合器自己生成buffer，如果保持时间违例少量的话，可以手动在网表里插入延迟。</p>
 
                 
             </div>
