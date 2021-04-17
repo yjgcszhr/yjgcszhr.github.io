@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>时序优化</title>
+      <link href="posts/d915.html"/>
+      <url>posts/d915.html</url>
+      
+        <content type="html"><![CDATA[<p>当综合工具综合一个完整工程后，使用者可以查看时序分析结果，以vivado为例，我们可以看到模块电路的建立时间裕量、保持时间裕量分析，其结果可决定模块电路可以跑到多大时钟频率。如果这些时间裕量为负，那么只能降低时钟频率又或者进行时序优化。</p><h2 id="建立时间问题"><a href="#建立时间问题" class="headerlink" title="建立时间问题"></a>建立时间问题</h2><p>建立时间裕量公式分析前面已经解析过了，建立时间裕量问题很是常见，其出现原因主要是组合逻辑过于复杂冗余，或者电路扇出太大。</p><h3 id="组合逻辑冗余"><a href="#组合逻辑冗余" class="headerlink" title="组合逻辑冗余"></a>组合逻辑冗余</h3><p>组合逻辑复杂冗余会导致逻辑级数过多（逻辑级数是指一个LUT和一个net的延迟），举个例子来说，如果一个逻辑级数延迟0.5ns,那么十级逻辑级数就是5ns，级数越多延迟越大，这肯定会影响模块的工作频率。所以有效降低逻辑级数才能更好的提高时钟频率。怎么做呢？<br>首先找出路径延迟最大的一条path，对于这条路径的组合逻辑进行优化，优化无非这么几种，<br>1、加入寄存器，将冗长的组合逻辑多打几拍，类似于流水线操作。注意在组合逻辑中间处添加寄存器，否则效果不明显。</p><pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">reg [3:0]sum;wire a,b,c,d,e,f;always@(posedge clk) beginsum &lt;&#x3D; a+b+c+d;end <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>修改后：</p><pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">reg [3:0]sum;reg [2:0]sum1;reg [2:0]sum2;wire a,b,c,d,e,f;always@(posedge clk) beginsum &lt;&#x3D; sum1 +sum2;sum1 &lt;&#x3D; a+b;sum2 &lt;&#x3D; c+d;end <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>2、并行化处理，将大的逻辑块分解成几个小的进行并行处理，例如实现sum= a+b+c+d+e+f;<br>源代码是这样：</p><pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">wire [3:0]sum;wire a,b,c,d,e,f;assign sum &#x3D; a+b+c+d+e+f;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>我们拆解后就可以是这样：</p><pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog">wire [3:0]sum;wire [1:0]sum1;wire [1:0]sum2;wire [1:0]sum3;assign sum1 &#x3D; a+b;assign sum2 &#x3D; c+d;assign sum3 &#x3D; d+e;assign sum &#x3D; sum1+sum2+sum3;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>原先5级逻辑被优化成3级，大大减少了延迟。</p><p>3、优化优先级电路，即对于if else语句，第一if else 不能嵌套太多，（即小于等于三层嵌套），第二 如果优先级电路不必须的话，可以采用case语句。</p><h3 id="电路扇出太大"><a href="#电路扇出太大" class="headerlink" title="电路扇出太大"></a>电路扇出太大</h3><p>电路扇出就是该信号驱动下一级信号的个数，一般来说，扇出数目越大，延迟越大。解决的方法就是<br>1、复制电路。例如一个组合逻辑驱动多个寄存器，<br><img src="/img/%E6%97%B6%E5%BA%8F%E4%BC%98%E5%8C%96/h1.jpg"><br>优化后：<br><img src="/img/%E6%97%B6%E5%BA%8F%E4%BC%98%E5%8C%96/h2.jpg"><br>一般推荐模块输出采用寄存器输出，这样情况下复制电路就是多复制几个寄存器。<br>2、使用BUFG<br>通常BUFG是用于全局时钟的资源，可以解决信号因为高扇出产生的问题。但是其一般用于<strong>时钟或者复位</strong>之类扇出超级大的信号，此类信号涉及的逻辑遍布整个芯片，而BUFG可以从全局的角度优化布线。<br>在xdc文件里添加</p><pre class="line-numbers language-none"><code class="language-none">set_property CLOCK_BUFFER_TYPE BUFG [get_nets netName]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>3、在代码中标注信号属性，规定扇出数目，剩下的交给综合器进行优化。</p><pre class="line-numbers language-none"><code class="language-none">(* max_fanout &#x3D; &quot;3&quot; *)reg  signed [15:0] din_d;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="保持时间问题"><a href="#保持时间问题" class="headerlink" title="保持时间问题"></a>保持时间问题</h2><p>保持时间违例原因只有延时不够，其公式分析前文已经讲过，解决的办法很简单就是插入buffer,要么综合器自己优化插入，要么手动插入。我推荐输入命令让综合器自己生成buffer，如果保持时间违例少量的话，可以手动在网表里插入延迟。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 时序优化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>杂谈1</title>
       <link href="posts/e70.html"/>
       <url>posts/e70.html</url>

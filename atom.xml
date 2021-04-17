@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-04-05T09:26:07.165Z</updated>
+  <updated>2021-04-17T14:32:35.626Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>时序优化</title>
+    <link href="http://yjgcszhr.github.io/posts/d915.html"/>
+    <id>http://yjgcszhr.github.io/posts/d915.html</id>
+    <published>2021-04-17T12:18:01.000Z</published>
+    <updated>2021-04-17T14:32:35.626Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;当综合工具综合一个完整工程后，使用者可以查看时序分析结果，以vivado为例，我们可以看到模块电路的建立时间裕量、保持时间裕量分析，其结果可决定模块电路可以跑到多大时钟频率。如果这些时间裕量为负，那么只能降低时钟频率又或者进行时序优化。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="时序优化" scheme="http://yjgcszhr.github.io/tags/%E6%97%B6%E5%BA%8F%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>杂谈1</title>
