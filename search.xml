@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>AMBA总线——axi4-lite总线</title>
+      <link href="posts/60b1.html"/>
+      <url>posts/60b1.html</url>
+      
+        <content type="html"><![CDATA[<p>学完了AXI4-stream总线，我们继续来学习AXI4—lite总线。虽然同属于AXI4协议，但两者还存在较大差别。<br>AXI4-lite总线是AXI4总线的简化版，仅支持32位或64位数据读写，而且每次只支持一次数据的读写。即猝发长度为1。这一特性限制了它只能用于小数量的数据传输.<br>AXI4-lite有五个独立的通道<br>读地址通道(Read address channel AR)<br>读数据通道(Read data channel R)<br>写地址通道(Write address channel AW)<br>写数据通道(Write data channel W)<br>写应答通道(Write response channel B)<br>每个通道都是双向握手机制通信，具体握手流程可参照前文axi4-stream总线所述，<br>那这几种通道如何配合工作完成一次完整的数据通信呢？<br>写数据过程：<br>首先主机发出写地址和控制信号，然后发出一次写数据，最后从机进行写应答。无论发送地址、数据、应答都是双方通过握手协议完成。<br><img src="/img/axi4_lite/e1.png" alt="写数据过程"></p><p>读数据过程：<br>首先主机发出读地址和控制信号，然后从机发送读数据。比起写数据过程，读数据过程少了一个应答环节。<br><img src="/img/axi4_lite/e2.png" alt="读数据过程"></p><p>全局信号<br><strong>ACLK</strong> 全局时钟信号，在上升沿时对信号采样。所有的输入信号都通过上升沿采集，所有的输出信号都在上升沿时变化。<br><strong>ARESETn</strong> 全局复位信号，低电平有效。在复位期间，所有的xxVALID信号必须复位为低电平。其他的信号可以是任意值。</p><p>写地址通道信号<br>主机(master)控制的信号<br><strong>AWVALID</strong><br><strong>AWADDR</strong> 地址信号线，传输地址信息。<br><strong>AWPROT</strong> 访问权限信号线，xilinx建议赋值为3’b000.xilinx IP 一般忽略此信号。<br>从机(slave)控制的信号<br><strong>AWREADY</strong></p><p>写数据通道信号<br>主机(master)控制的信号<br><strong>WVALID</strong><br><strong>WDATA</strong> 数据信号线，传输数据信息。<br><strong>WSTRB</strong> 数据总线有效字节控制。比如32位的总线，WSTRB等于4’b0010,那么代表WDATA[15:8]中的数据有效。其他无效。如果要求WDATA[31:0]32位全有效，那么WSTRB就应该等于4’b1111.<br>从机(slave)控制的信号<br><strong>WREADY</strong></p><p>写应答通道信号<br>主机(master)控制的信号<br><strong>BREADY</strong><br>从机(slave)控制的信号<br><strong>BVALID</strong><br><strong>BRESP</strong> 应答类型。AXI4-lite不支持EXOKAY类型的响应。<br>OKEY   0 正常访问成功<br>SLVERR 2 从机错误<br>DECERR 3 解码错误，比如没有从机的地址。</p><p>读地址通道信号<br>主机(master)控制的信号<br><strong>ARVALID</strong><br><strong>ARADDR</strong> 地址信号线，传输地址信息。<br><strong>ARPROT</strong> 访问权限信号线，xilinx建议赋值为3’b000.xilinx IP 一般忽略此信号。<br>从机(slave)控制的信号<br><strong>ARREADY</strong></p><p>读数据通道信号<br>从机(slave)控制的信号<br><strong>RREADY</strong><br>主机(master)控制的信号<br><strong>RVALID</strong><br><strong>RDATA</strong> 数据信号线，传输数据信息。<br><strong>RRESP</strong> 同写应答信号BRESP</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 理论知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AXI4-lite </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>时序优化</title>
       <link href="posts/d915.html"/>
       <url>posts/d915.html</url>

@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-04-17T14:37:08.356Z</updated>
+  <updated>2021-04-19T04:19:29.840Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AMBA总线——axi4-lite总线</title>
+    <link href="http://yjgcszhr.github.io/posts/60b1.html"/>
+    <id>http://yjgcszhr.github.io/posts/60b1.html</id>
+    <published>2021-04-18T15:20:06.000Z</published>
+    <updated>2021-04-19T04:19:29.840Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;学完了AXI4-stream总线，我们继续来学习AXI4—lite总线。虽然同属于AXI4协议，但两者还存在较大差别。&lt;br&gt;AXI4-lite总线是AXI4总线的简化版，仅支持32位或64位数据读写，而且每次只支持一次数据的读写。即猝发长度为1。这一特性限制了它只能用于小</summary>
+        
+      
+    
+    
+    
+    <category term="理论知识" scheme="http://yjgcszhr.github.io/categories/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="AXI4-lite" scheme="http://yjgcszhr.github.io/tags/AXI4-lite/"/>
+    
+  </entry>
   
   <entry>
     <title>时序优化</title>
