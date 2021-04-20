@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>AMBA总线(5)——AHB总线</title>
+      <link href="posts/f147.html"/>
+      <url>posts/f147.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 理论知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AMBA总线 </tag>
+            
+            <tag> AHB总线 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AMBA总线(4)——axi4总线</title>
       <link href="posts/6229.html"/>
       <url>posts/6229.html</url>
       
-        <content type="html"><![CDATA[<p>学完了axi4-stream和axi4-lite总线，我们可以轻松学习标准的axi4总线。axi4总线和axi4-lite总线差不多也有五个独立通道，但是axi4可支持猝发传输，即一次可以传输多达256个数据。<br>axi4-lite总线是axi4总线的子集，即axi4-lite的握手机制、独立通道配合等在axi4这儿一样适用。我们现在讲一下axi4的独特之处。</p><h2 id="猝发类型："><a href="#猝发类型：" class="headerlink" title="猝发类型："></a>猝发类型：</h2><p>回卷猝发、递增猝发、固定猝发</p><h3 id="回卷猝发"><a href="#回卷猝发" class="headerlink" title="回卷猝发"></a>回卷猝发</h3><p>猝发长度仅支持2、4、8、16</p><h2 id="信号线详解"><a href="#信号线详解" class="headerlink" title="信号线详解"></a>信号线详解</h2><p>axi4-lite总线里讲解过的部分信号此处跳过，大家想看的话可以点击这里<a href="https://zhuhr.xyz/posts/60b1.html">axi4-lite总线</a></p><h3 id="全局信号"><a href="#全局信号" class="headerlink" title="全局信号"></a>全局信号</h3><p><strong>ACLK</strong><br><strong>ARESETn</strong> </p><h3 id="写地址通道信号"><a href="#写地址通道信号" class="headerlink" title="写地址通道信号"></a>写地址通道信号</h3><p>主机(master)控制的信号<br><strong>AWVALID</strong> <strong>AWADDR</strong> <strong>AWPROT</strong><br><strong>AWID</strong>:写地址ID。这个信号用于写地址信号组的标记。<br><strong>AWLEN</strong>:猝发长度，给出突发传输中准确的传输个数。在回卷猝发和递增猝发模式有效。<br><strong>AWSIZE</strong>:突发大小。这个信号用于确定突发传输中每个传输的大小。<br><strong>AWBURST</strong>:猝发类型。<br><strong>AWLOCK</strong>:锁类型。该信号提供了关于传输原子特性的额外信息（普通或互斥访问）。<br><strong>AWCACHE</strong>:缓存类型，建议值为0011。<br><strong>AWREGION</strong>:用于每个写操作的地址通道上的域标识符。</p><p>从机(slave)控制的信号<br><strong>AWREADY</strong></p><h3 id="写数据通道信号"><a href="#写数据通道信号" class="headerlink" title="写数据通道信号"></a>写数据通道信号</h3><p>主机(master)控制的信号<br><strong>WVALID</strong> <strong>WDATA</strong> <strong>WSTRB</strong><br><strong>WLAST</strong>:最后一个数据指示信号<br><strong>WUSER</strong>:xilinx不支持<br>从机(slave)控制的信号<br><strong>WREADY</strong></p><h3 id="写应答通道信号"><a href="#写应答通道信号" class="headerlink" title="写应答通道信号"></a>写应答通道信号</h3><p>主机(master)控制的信号<br><strong>BREADY</strong></p><p>从机(slave)控制的信号<br><strong>BVALID</strong> <strong>BRESP</strong><br><strong>BID</strong>:响应ID,必须与AWID相匹配。</p><h3 id="读地址通道信号"><a href="#读地址通道信号" class="headerlink" title="读地址通道信号"></a>读地址通道信号</h3><p>主机(master)控制的信号<br><strong>ARVALID</strong> <strong>ARADDR</strong> <strong>ARPROT</strong><br><strong>ARID</strong><br><strong>ARLEN</strong><br><strong>ARSIZE</strong><br><strong>ARLOCK</strong><br><strong>ARBURST</strong><br><strong>ARCACHE</strong><br><strong>ARREGION</strong><br>以上信号解析与写地址通道的相类似。</p><p>从机(slave)控制的信号<br><strong>ARREADY</strong></p><h3 id="读数据通道信号"><a href="#读数据通道信号" class="headerlink" title="读数据通道信号"></a>读数据通道信号</h3><p>从机(slave)控制的信号<br><strong>RREADY</strong><br>主机(master)控制的信号<br><strong>RVALID</strong> <strong>RDATA</strong> <strong>RRESP</strong><br><strong>RLAST</strong><br><strong>RID</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>学完了axi4-stream和axi4-lite总线，我们可以轻松学习标准的axi4总线。axi4总线和axi4-lite总线差不多也有五个独立通道，<br>axi4-lite总线是axi4总线的子集，即axi4-lite的握手机制、独立通道配合等在axi4这儿一样适用。我们现在讲一下axi4的独特之处。</p><h2 id="猝发类型："><a href="#猝发类型：" class="headerlink" title="猝发类型："></a>猝发类型：</h2><p>axi4可支持猝发传输，即一次可以传输多达256个数据。而且每一次猝发传输在完成所有数据传输前不能提前结束，即使数据错误，不想要也要含泪走完整个流程。<br>回卷猝发、递增猝发、固定猝发。所有猝发都不能超过4KB地址边界</p><h3 id="回卷猝发"><a href="#回卷猝发" class="headerlink" title="回卷猝发"></a>回卷猝发</h3><p>猝发长度仅支持2、4、8、16，地址会回卷，地址增加到某个地址后会回到初始地址。</p><h3 id="递增猝发"><a href="#递增猝发" class="headerlink" title="递增猝发"></a>递增猝发</h3><p>每次传输地址会在上一个地址基础上增加,递增幅度与传输宽度相同。适合对于 RAM 等通过地址映射（mapped memory）的存储介质进行读写操作。</p><h3 id="固定猝发"><a href="#固定猝发" class="headerlink" title="固定猝发"></a>固定猝发</h3><p>即每次传输都使用一个地址-初始地址,该模式适合对某个固定地址进行多次数据更新。比如读写fifo.</p><h2 id="读写时序图"><a href="#读写时序图" class="headerlink" title="读写时序图"></a>读写时序图</h2><p>当地址出现在地址总线后，传输的数据将出现在读数据通道上。设备保持VALID 为低直到读数据有效。为了表明一次突发式读写的完成，设备用 RLAST 信号来表示最后一个被传输的数据。<br><img src="/img/axi4/l1.png" alt="AXI4突发读时序"></p><p>主机发送地址和控制信息到写地址通道中，然后主机发送每一个写数据到写数据通道中。当主机发送最后一个数据时，WLAST 信号就变为高。当设备接收完所有数据之后他将一个写响应发送回主机来表明写事务完成。<br><img src="/img/axi4/l2.png" alt="AXI4突发写时序"></p><h2 id="信号线详解"><a href="#信号线详解" class="headerlink" title="信号线详解"></a>信号线详解</h2><p>axi4-lite总线里讲解过的部分信号此处跳过，大家想看的话可以点击这里<a href="https://zhuhr.xyz/posts/60b1.html">axi4-lite总线</a></p><h3 id="全局信号"><a href="#全局信号" class="headerlink" title="全局信号"></a>全局信号</h3><p><strong>ACLK</strong><br><strong>ARESETn</strong> </p><h3 id="写地址通道信号"><a href="#写地址通道信号" class="headerlink" title="写地址通道信号"></a>写地址通道信号</h3><p>主机(master)控制的信号<br><strong>AWVALID</strong> <strong>AWADDR</strong> <strong>AWPROT</strong><br><strong>AWID</strong>:写地址ID。这个信号用于写地址信号组的标记。<br><strong>AWLEN</strong>:猝发长度，给出突发传输中准确的传输个数。在回卷猝发和递增猝发模式有效。<br><strong>AWSIZE</strong>:猝发传输宽度。这个信号用于确定突发传输中每个传输的大小。不能大于总线宽度。有1、2、4、8……128字节可选<br><strong>AWBURST</strong>:猝发类型。<br><strong>AWLOCK</strong>:锁类型。该信号提供了关于传输原子特性的额外信息（普通或互斥访问）。<br><strong>AWCACHE</strong>:缓存类型，建议值为0011。<br><strong>AWREGION</strong>:用于每个写操作的地址通道上的域标识符。</p><p>从机(slave)控制的信号<br><strong>AWREADY</strong></p><h3 id="写数据通道信号"><a href="#写数据通道信号" class="headerlink" title="写数据通道信号"></a>写数据通道信号</h3><p>主机(master)控制的信号<br><strong>WVALID</strong> <strong>WDATA</strong> <strong>WSTRB</strong><br><strong>WLAST</strong>:最后一个数据指示信号<br><strong>WUSER</strong>:xilinx不支持<br>从机(slave)控制的信号<br><strong>WREADY</strong></p><h3 id="写应答通道信号"><a href="#写应答通道信号" class="headerlink" title="写应答通道信号"></a>写应答通道信号</h3><p>主机(master)控制的信号<br><strong>BREADY</strong></p><p>从机(slave)控制的信号<br><strong>BVALID</strong> <strong>BRESP</strong><br><strong>BID</strong>:响应ID,必须与AWID相匹配。</p><h3 id="读地址通道信号"><a href="#读地址通道信号" class="headerlink" title="读地址通道信号"></a>读地址通道信号</h3><p>主机(master)控制的信号<br><strong>ARVALID</strong> <strong>ARADDR</strong> <strong>ARPROT</strong><br><strong>ARID</strong><br><strong>ARLEN</strong><br><strong>ARSIZE</strong><br><strong>ARLOCK</strong><br><strong>ARBURST</strong><br><strong>ARCACHE</strong><br><strong>ARREGION</strong><br>以上信号解析与写地址通道的相类似。</p><p>从机(slave)控制的信号<br><strong>ARREADY</strong></p><h3 id="读数据通道信号"><a href="#读数据通道信号" class="headerlink" title="读数据通道信号"></a>读数据通道信号</h3><p>从机(slave)控制的信号<br><strong>RREADY</strong><br>主机(master)控制的信号<br><strong>RVALID</strong> <strong>RDATA</strong> <strong>RRESP</strong><br><strong>RLAST</strong><br><strong>RID</strong></p>]]></content>
       
       
       <categories>

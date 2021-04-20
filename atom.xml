@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-04-20T09:04:57.305Z</updated>
+  <updated>2021-04-20T14:41:45.952Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -17,18 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AMBA总线(5)——AHB总线</title>
+    <link href="http://yjgcszhr.github.io/posts/f147.html"/>
+    <id>http://yjgcszhr.github.io/posts/f147.html</id>
+    <published>2021-04-20T14:40:03.000Z</published>
+    <updated>2021-04-20T14:41:45.952Z</updated>
+    
+    
+    
+    
+    <category term="理论知识" scheme="http://yjgcszhr.github.io/categories/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="AMBA总线" scheme="http://yjgcszhr.github.io/tags/AMBA%E6%80%BB%E7%BA%BF/"/>
+    
+    <category term="AHB总线" scheme="http://yjgcszhr.github.io/tags/AHB%E6%80%BB%E7%BA%BF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AMBA总线(4)——axi4总线</title>
     <link href="http://yjgcszhr.github.io/posts/6229.html"/>
     <id>http://yjgcszhr.github.io/posts/6229.html</id>
     <published>2021-04-20T07:21:24.000Z</published>
-    <updated>2021-04-20T09:04:57.305Z</updated>
+    <updated>2021-04-20T14:33:43.800Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;学完了axi4-stream和axi4-lite总线，我们可以轻松学习标准的axi4总线。axi4总线和axi4-lite总线差不多也有五个独立通道，但是axi4可支持猝发传输，即一次可以传输多达256个数据。&lt;br&gt;axi4-lite总线是axi4总线的子集，即axi4-</summary>
+    <summary type="html">&lt;p&gt;学完了axi4-stream和axi4-lite总线，我们可以轻松学习标准的axi4总线。axi4总线和axi4-lite总线差不多也有五个独立通道，&lt;br&gt;axi4-lite总线是axi4总线的子集，即axi4-lite的握手机制、独立通道配合等在axi4这儿一样适用。我</summary>
         
       
     
