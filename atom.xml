@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-04-20T14:41:45.952Z</updated>
+  <updated>2021-04-28T15:15:16.674Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MKA密钥协商</title>
+    <link href="http://yjgcszhr.github.io/posts/fc50.html"/>
+    <id>http://yjgcszhr.github.io/posts/fc50.html</id>
+    <published>2021-04-28T15:00:18.000Z</published>
+    <updated>2021-04-28T15:15:16.674Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;MKA（MACsec Key Agreement protocol）是用于 MACsec 数据加密密钥的协商协议。该部分用于生成macsec数据所需要的SAK，并对SAK进行分发。&lt;/p&gt;
+&lt;h2 id=&quot;协商流程&quot;&gt;&lt;a href=&quot;#协商流程&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="理论知识" scheme="http://yjgcszhr.github.io/categories/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="MKA" scheme="http://yjgcszhr.github.io/tags/MKA/"/>
+    
+    <category term="MACSEC" scheme="http://yjgcszhr.github.io/tags/MACSEC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>AMBA总线(5)——AHB总线</title>
     <link href="http://yjgcszhr.github.io/posts/f147.html"/>
     <id>http://yjgcszhr.github.io/posts/f147.html</id>
     <published>2021-04-20T14:40:03.000Z</published>
-    <updated>2021-04-20T14:41:45.952Z</updated>
+    <updated>2021-04-20T14:42:15.924Z</updated>
     
     
     
