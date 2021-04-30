@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-04-30T06:28:57.790Z</updated>
+  <updated>2021-04-30T14:05:52.308Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AMBA总线(5)——AHB总线</title>
+    <link href="http://yjgcszhr.github.io/posts/f147.html"/>
+    <id>http://yjgcszhr.github.io/posts/f147.html</id>
+    <published>2021-04-30T14:40:03.000Z</published>
+    <updated>2021-04-30T14:05:52.308Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;AHB总线（Advanced High-performance Bus）是AMBA（Advanced Microcontroller Bus Architecture） 片上总线体系的一部分。</summary>
+        
+      
+    
+    
+    
+    <category term="理论知识" scheme="http://yjgcszhr.github.io/categories/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="AMBA总线" scheme="http://yjgcszhr.github.io/tags/AMBA%E6%80%BB%E7%BA%BF/"/>
+    
+    <category term="AHB总线" scheme="http://yjgcszhr.github.io/tags/AHB%E6%80%BB%E7%BA%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>MKA密钥协商</title>
@@ -41,25 +68,6 @@
     <category term="MKA" scheme="http://yjgcszhr.github.io/tags/MKA/"/>
     
     <category term="MACSEC" scheme="http://yjgcszhr.github.io/tags/MACSEC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AMBA总线(5)——AHB总线</title>
-    <link href="http://yjgcszhr.github.io/posts/f147.html"/>
-    <id>http://yjgcszhr.github.io/posts/f147.html</id>
-    <published>2021-04-20T14:40:03.000Z</published>
-    <updated>2021-04-20T14:42:15.924Z</updated>
-    
-    
-    
-    
-    <category term="理论知识" scheme="http://yjgcszhr.github.io/categories/%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="AMBA总线" scheme="http://yjgcszhr.github.io/tags/AMBA%E6%80%BB%E7%BA%BF/"/>
-    
-    <category term="AHB总线" scheme="http://yjgcszhr.github.io/tags/AHB%E6%80%BB%E7%BA%BF/"/>
     
   </entry>
   
@@ -385,7 +393,7 @@
     <link href="http://yjgcszhr.github.io/posts/b859.html"/>
     <id>http://yjgcszhr.github.io/posts/b859.html</id>
     <published>2021-03-06T13:27:04.000Z</published>
-    <updated>2021-03-15T15:13:50.349Z</updated>
+    <updated>2021-04-30T09:06:20.735Z</updated>
     
     
     <summary type="html">&lt;p&gt;Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。笔者写这篇文章主要是写给自己看，熟能生巧，也顺便推广一波markdown。&lt;/p&gt;</summary>
