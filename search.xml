@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>时序约束入门（二）</title>
+      <link href="posts/9ec5.html"/>
+      <url>posts/9ec5.html</url>
+      
+        <content type="html"><![CDATA[<p>在前面<a href="https://zhuhr.xyz/posts/fd6e.html">时序约束入门（一）</a>，我们了解了时序约束的一些基本概念，包括建立时间裕量、保持时间裕量等，现在我们具体来了解在fpga上如何实现时序的约束。<br>本文主要以vivado为例。<br>不同路径约束方法不一样，<br><img src="/img/STA/b8.png"></p><table><thead><tr><th>路径</th><th>约束方法</th></tr></thead><tbody><tr><td>模块内部触发器之间路径</td><td>create_clock</td></tr><tr><td>上一模块寄存器输出到本模块寄存器输入</td><td>set_input_delay</td></tr><tr><td>本模块寄存器输出到下一模块寄存器输入</td><td>set_output_delay</td></tr><tr><td>本模块输入口到输出口</td><td>set_max_delay</td></tr></tbody></table><h3 id="输入延时"><a href="#输入延时" class="headerlink" title="输入延时"></a>输入延时</h3><p>由下图可以看出Input Delay是以上游芯片的时钟发送沿为参考，上游的时钟端到达本模块外部输入端口之间的时间差。</p><p>输入延迟（input delay）包括Tco和Trace Delay（板间延迟），其中Trace delay又叫Board delay。<br><img src="/img/STA/b9.png"></p><p>约束的写法为：<br><img src="/img/STA/b12.png"><br>如果同时设置了max和min delay，那么max值是用在对Input Setup Timing的分析中的，而min值用在对Input hold Timing的分析中。如果只设置了一个值，那么同时供两者使用！！！</p><p>约束能够让软件优化布线布局，同时时序分析报告把时序路径分为三部分，然后分别计算各部分的延时，最后计算出裕量slack，根据slack的值来判断时序是否正确。<br><img src="/img/STA/b13.png"></p><p>source clock path + data path = 实际的数据到达延迟路径；</p><p>T(destination clock path) - Ts（或者+Th） = 数据需求时间；<br>在计算数据需求时间时，如果是对建立时间进行时序分析，那么在T(destination clock path) - Ts中，destination clock path的初始时间就是一个clock周期；</p><p>而在对保持时间进行时序分析的时候，在T(destination clock path) +Th中，destination clock path的初始时间为0</p><p>输入延时建立时间分析报告：<br><img src="/img/STA/b14.png"><br>输入延时保持时间分析报告：<br><img src="/img/STA/b15.png"></p><h3 id="输出延时"><a href="#输出延时" class="headerlink" title="输出延时"></a>输出延时</h3><p>output delay以下游芯片时钟端为参考。本模块输出端数据到达下游时钟端的时间差。<br>输出延迟（output delay）包括Tsu和Trace Delay（板间延迟）。<br><img src="/img/STA/b10.png"></p><p>约束的写法为：<br><img src="/img/STA/b11.png"></p><p>输出路径分析可以分成这三部分<br><img src="/img/STA/b16.png"></p><p>输出延时建立时间分析报告：<br><img src="/img/STA/b17.png"><br>输出延时保持时间分析报告：<br><img src="/img/STA/b18.png"></p><h3 id="最大延时"><a href="#最大延时" class="headerlink" title="最大延时"></a>最大延时</h3><p>组合逻辑电路输入到输出的延时<br><img src="/img/STA/b19.png"></p><p>最大延时约束举例：<br><img src="/img/STA/b20.png"><br>最大延时约束分析报告：<br><img src="/img/STA/b21.png"></p><p>PS:此文章转载自<a href="https://blog.csdn.net/qq_39507748/article/details/114746186?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-5.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-5.control">https://blog.csdn.net/qq_39507748/article/details/114746186?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-5.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-5.control</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IC设计 </tag>
+            
+            <tag> STA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AMBA总线(5)——AHB总线</title>
       <link href="posts/f147.html"/>
       <url>posts/f147.html</url>
@@ -218,7 +245,7 @@
     
     
     <entry>
-      <title>时序约束入门</title>
+      <title>时序约束入门（一）</title>
       <link href="posts/fd6e.html"/>
       <url>posts/fd6e.html</url>
       

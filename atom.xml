@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-04-30T15:23:30.503Z</updated>
+  <updated>2021-05-05T11:05:30.384Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>时序约束入门（二）</title>
+    <link href="http://yjgcszhr.github.io/posts/9ec5.html"/>
+    <id>http://yjgcszhr.github.io/posts/9ec5.html</id>
+    <published>2021-05-05T06:52:28.000Z</published>
+    <updated>2021-05-05T11:05:30.384Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在前面&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="IC设计" scheme="http://yjgcszhr.github.io/tags/IC%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="STA" scheme="http://yjgcszhr.github.io/tags/STA/"/>
+    
+  </entry>
   
   <entry>
     <title>AMBA总线(5)——AHB总线</title>
@@ -234,11 +261,11 @@
   </entry>
   
   <entry>
-    <title>时序约束入门</title>
+    <title>时序约束入门（一）</title>
     <link href="http://yjgcszhr.github.io/posts/fd6e.html"/>
     <id>http://yjgcszhr.github.io/posts/fd6e.html</id>
     <published>2021-03-17T13:50:37.000Z</published>
-    <updated>2021-04-10T14:41:26.431Z</updated>
+    <updated>2021-05-05T11:06:08.439Z</updated>
     
     
       
