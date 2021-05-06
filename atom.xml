@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-05-05T11:05:30.384Z</updated>
+  <updated>2021-05-06T09:09:02.868Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>低功耗设计入门</title>
+    <link href="http://yjgcszhr.github.io/posts/8527.html"/>
+    <id>http://yjgcszhr.github.io/posts/8527.html</id>
+    <published>2021-05-06T05:54:42.000Z</published>
+    <updated>2021-05-06T09:09:02.868Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;CMOS电路中的功耗分为两部分：静态功耗和动态功耗；&lt;br&gt;静态功耗是由漏电流引起的功耗；动态功耗分为翻转功耗和短路功耗，翻转功耗也就是0与1翻转所引发的功耗，而短路功耗则是由于PMOS和NMOS都导通时所引起的功耗；&lt;/p&gt;
+&lt;p&gt;我们可以在五个层次下对系统的功耗进行优化</summary>
+        
+      
+    
+    
+    
+    <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="IC设计" scheme="http://yjgcszhr.github.io/tags/IC%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="低功耗" scheme="http://yjgcszhr.github.io/tags/%E4%BD%8E%E5%8A%9F%E8%80%97/"/>
+    
+  </entry>
   
   <entry>
     <title>时序约束入门（二）</title>
