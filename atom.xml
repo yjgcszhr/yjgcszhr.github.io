@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-05-06T09:09:02.868Z</updated>
+  <updated>2021-05-17T08:14:52.395Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>dc实战</title>
+    <link href="http://yjgcszhr.github.io/posts/8502.html"/>
+    <id>http://yjgcszhr.github.io/posts/8502.html</id>
+    <published>2021-05-17T08:02:01.000Z</published>
+    <updated>2021-05-17T08:14:52.395Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;定义面积约束&quot;&gt;&lt;a href=&quot;#定义面积约束&quot; class=&quot;headerlink&quot; title=&quot;定义面积约束&quot;&gt;&lt;/a&gt;定义面积约束&lt;/h3&gt;&lt;p&gt;因为芯片面积直接关系到芯片的成本，面积越大，成本越高，所以通过 set_max_area</summary>
+        
+      
+    
+    
+    
+    <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="design compilier" scheme="http://yjgcszhr.github.io/tags/design-compilier/"/>
+    
+  </entry>
   
   <entry>
     <title>低功耗设计入门</title>
@@ -213,7 +238,7 @@
     <link href="http://yjgcszhr.github.io/posts/a99d.html"/>
     <id>http://yjgcszhr.github.io/posts/a99d.html</id>
     <published>2021-04-04T07:53:59.000Z</published>
-    <updated>2021-04-06T14:58:04.103Z</updated>
+    <updated>2021-05-06T12:37:52.395Z</updated>
     
     
       
@@ -229,7 +254,7 @@
     <category term="编程语言" scheme="http://yjgcszhr.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-    <category term="sytemverilog" scheme="http://yjgcszhr.github.io/tags/sytemverilog/"/>
+    <category term="systemverilog" scheme="http://yjgcszhr.github.io/tags/systemverilog/"/>
     
   </entry>
   
@@ -347,7 +372,7 @@
     <link href="http://yjgcszhr.github.io/posts/a9a8.html"/>
     <id>http://yjgcszhr.github.io/posts/a9a8.html</id>
     <published>2021-03-14T15:20:06.000Z</published>
-    <updated>2021-03-14T08:57:23.097Z</updated>
+    <updated>2021-05-07T07:26:46.387Z</updated>
     
     
     <summary type="html">个人每周随笔，不定期更新</summary>
@@ -355,7 +380,7 @@
     
     
     
-    <category term="水笔" scheme="http://yjgcszhr.github.io/tags/%E6%B0%B4%E7%AC%94/"/>
+    <category term="随笔" scheme="http://yjgcszhr.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
