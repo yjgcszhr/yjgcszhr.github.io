@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>时钟切换</title>
+      <link href="posts/2015.html"/>
+      <url>posts/2015.html</url>
+      
+        <content type="html"><![CDATA[<p>芯片运行时需要切换不同的时钟源。两个不同的时钟之间可能是完全不相关的，即频率与相位均不相关，也可能存在一定的相位关系或频率倍数关系。但不管是何种关系，如果贸然进行简单的时钟切换的话，就会出现这种情况，上一个时钟还没有结束一个周期，替换的时钟就出现了，这样就会出现了毛刺。</p><h2 id="简单的时钟切换"><a href="#简单的时钟切换" class="headerlink" title="简单的时钟切换"></a>简单的时钟切换</h2><p>采用与门和或门构成的选择器电路，时钟选择由SEL信号控制。 当SELECT发生翻转时会切换时钟源，由于切换信号的时刻是不确定的，因此可能会出现毛刺。<br><img src="/img/%E6%97%B6%E9%92%9F%E5%88%87%E6%8D%A2/1.jpg"><br>实际波形展示：<br><img src="/img/%E6%97%B6%E9%92%9F%E5%88%87%E6%8D%A2/2.jpg"></p><h2 id="无毛刺的时钟切换"><a href="#无毛刺的时钟切换" class="headerlink" title="无毛刺的时钟切换"></a>无毛刺的时钟切换</h2><p>在每个时钟源的选择路径中插入一个负边沿触发的D触发器。 在时钟的下降沿采样选择控制（SELECT），以及仅在首先使其他时钟无效后使能选择（SELECT），可以提供出色的输出保护。<br><img src="/img/%E6%97%B6%E9%92%9F%E5%88%87%E6%8D%A2/3.jpg"><br>可以分析一波，当select信号拉高时，此时DFF0输出QN还为0，所以需要等待CLK0下降沿到达，QN翻转为1,。此时DFF1的输入就为1，在CLK1下降沿到达后，输出时钟就会切换成了CLK1。<br>效果展示如下：<br><img src="/img/%E6%97%B6%E9%92%9F%E5%88%87%E6%8D%A2/4.jpg"></p><h2 id="改进后的时钟切换"><a href="#改进后的时钟切换" class="headerlink" title="改进后的时钟切换"></a>改进后的时钟切换</h2><p>SELECT信号是要到CLK0和CLK1两个不同时域，他的变化会导致亚稳态的出现。所以我们要在两个时钟域中对它进行同步处理。<br>采用两级触发器，既可以实现同步，也可以避免毛刺。<br><img src="/img/%E6%97%B6%E9%92%9F%E5%88%87%E6%8D%A2/5.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实用技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 时钟切换电路 </tag>
+            
+            <tag> clock switching </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>dc实战</title>
       <link href="posts/8502.html"/>
       <url>posts/8502.html</url>

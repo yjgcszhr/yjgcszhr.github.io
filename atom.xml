@@ -6,7 +6,7 @@
   <link href="http://yjgcszhr.github.io/atom.xml" rel="self"/>
   
   <link href="http://yjgcszhr.github.io/"/>
-  <updated>2021-05-17T08:14:52.395Z</updated>
+  <updated>2021-06-02T07:29:20.845Z</updated>
   <id>http://yjgcszhr.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>时钟切换</title>
+    <link href="http://yjgcszhr.github.io/posts/2015.html"/>
+    <id>http://yjgcszhr.github.io/posts/2015.html</id>
+    <published>2021-06-02T05:57:52.000Z</published>
+    <updated>2021-06-02T07:29:20.845Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;芯片运行时需要切换不同的时钟源。两个不同的时钟之间可能是完全不相关的，即频率与相位均不相关，也可能存在一定的相位关系或频率倍数关系。但不管是何种关系，如果贸然进行简单的时钟切换的话，就会出现这种情况，上一个时钟还没有结束一个周期，替换的时钟就出现了，这样就会出现了毛刺。&lt;/</summary>
+        
+      
+    
+    
+    
+    <category term="实用技巧" scheme="http://yjgcszhr.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="时钟切换电路" scheme="http://yjgcszhr.github.io/tags/%E6%97%B6%E9%92%9F%E5%88%87%E6%8D%A2%E7%94%B5%E8%B7%AF/"/>
+    
+    <category term="clock switching" scheme="http://yjgcszhr.github.io/tags/clock-switching/"/>
+    
+  </entry>
   
   <entry>
     <title>dc实战</title>
